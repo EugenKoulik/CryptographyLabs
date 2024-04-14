@@ -1,4 +1,4 @@
-﻿namespace CryptographyLabs.GlobalVariables;
+﻿namespace CryptographyLabs;
 
 public static class GlobalVariables
 {

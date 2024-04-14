@@ -11,13 +11,13 @@ public static class VigenereCipher
 
         foreach (var currentChar in decryptedString)
         {
-            if (GlobalVariables.GlobalVariables.RuAlphabet.Contains(currentChar))
+            if (GlobalVariables.RuAlphabet.Contains(currentChar))
             {
-                var lastIndex = GlobalVariables.GlobalVariables.RuAlphabet.IndexOf(currentChar);
-                var offset = GlobalVariables.GlobalVariables.RuAlphabet.IndexOf(key[numberOfCharInKey % key.Length]);
-                var newIndex = (lastIndex + offset) % GlobalVariables.GlobalVariables.RuAlphabet.Count;
+                var lastIndex = GlobalVariables.RuAlphabet.IndexOf(currentChar);
+                var offset = GlobalVariables.RuAlphabet.IndexOf(key[numberOfCharInKey % key.Length]);
+                var newIndex = (lastIndex + offset) % GlobalVariables.RuAlphabet.Count;
                 
-                encryptedString.Append(GlobalVariables.GlobalVariables.RuAlphabet[newIndex]);
+                encryptedString.Append(GlobalVariables.RuAlphabet[newIndex]);
                 
                 numberOfCharInKey++;
             }
@@ -37,13 +37,13 @@ public static class VigenereCipher
 
         foreach (var currentChar in encryptedString)
         {
-            if (GlobalVariables.GlobalVariables.RuAlphabet.Contains(currentChar))
+            if (GlobalVariables.RuAlphabet.Contains(currentChar))
             {
-                var lastIndex = GlobalVariables.GlobalVariables.RuAlphabet.IndexOf(currentChar);
-                var offset = GlobalVariables.GlobalVariables.RuAlphabet.IndexOf(key[numberOfCharInKey % key.Length]);
-                var newIndex = Math.Abs(GlobalVariables.GlobalVariables.RuAlphabet.Count - offset + lastIndex) % GlobalVariables.GlobalVariables.RuAlphabet.Count;
+                var lastIndex = GlobalVariables.RuAlphabet.IndexOf(currentChar);
+                var offset = GlobalVariables.RuAlphabet.IndexOf(key[numberOfCharInKey % key.Length]);
+                var newIndex = Math.Abs(GlobalVariables.RuAlphabet.Count - offset + lastIndex) % GlobalVariables.RuAlphabet.Count;
                 
-                decryptedString.Append(GlobalVariables.GlobalVariables.RuAlphabet[newIndex]);
+                decryptedString.Append(GlobalVariables.RuAlphabet[newIndex]);
                 
                 numberOfCharInKey++;
             }
