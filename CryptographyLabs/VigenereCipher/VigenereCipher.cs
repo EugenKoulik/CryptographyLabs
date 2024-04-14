@@ -41,7 +41,7 @@ public static class VigenereCipher
             {
                 var lastIndex = GlobalVariables.RuAlphabet.IndexOf(currentChar);
                 var offset = GlobalVariables.RuAlphabet.IndexOf(key[numberOfCharInKey % key.Length]);
-                var newIndex = Math.Abs(GlobalVariables.RuAlphabet.Count - offset + lastIndex) % GlobalVariables.RuAlphabet.Count;
+                var newIndex = (lastIndex - offset + GlobalVariables.RuAlphabet.Count) % GlobalVariables.RuAlphabet.Count;
                 
                 decryptedString.Append(GlobalVariables.RuAlphabet[newIndex]);
                 
