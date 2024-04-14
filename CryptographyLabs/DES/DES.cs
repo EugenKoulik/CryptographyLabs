@@ -190,10 +190,8 @@ public class DES
     {
         var output = new StringBuilder();
 
-        foreach (var currentChar in input)
+        foreach (var charBinary in input.Select(currentChar => new StringBuilder(Convert.ToString(currentChar, 2))))
         {
-            var charBinary = new StringBuilder(Convert.ToString(currentChar, 2));
-
             while (charBinary.Length < _sizeOfChar)
             {
                 charBinary.Insert(0, "0");
